@@ -3,6 +3,7 @@ package jpasearch;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+import io.blep.spysql.SpyDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -25,8 +26,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class TestApplication {
 
     @Bean
-    public DataSource dataSource() {
-        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
+    public SpyDataSource dataSource() {
+        return new SpyDataSource(new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build());
     }
 
     @Bean

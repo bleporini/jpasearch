@@ -202,6 +202,12 @@
       <version>1.6.0</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>io.blep</groupId>
+          <artifactId>spy-sql</artifactId>
+          <version>0.3</version>
+          <scope>test</scope>
+      </dependency>
   </dependencies>
   <build>
     <plugins>

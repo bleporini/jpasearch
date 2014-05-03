@@ -3,6 +3,7 @@ package jpasearch.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
@@ -18,6 +19,9 @@ public class EntityA implements Identifiable<Integer> {
     private Integer id;
 
     private String value;
+
+    @ManyToOne
+    private EntityB b;
 
     @Override
     public boolean isIdSet() {
